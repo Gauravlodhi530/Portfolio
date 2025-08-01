@@ -22,6 +22,10 @@ connectDB();
 // Routes
 app.use(contactRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Backend is working!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
