@@ -1,64 +1,133 @@
-
+'use client'
 import { FaInstagram, FaGithub, FaLinkedin, FaDiscord, FaDownload } from "react-icons/fa";
-
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+
 export default function HeroSection() {
-
-
   const router = useRouter();
+  
   return (
-    <section className="flex flex-col md:flex-row items-center justify-around md:h-[100vh] py-15 gap-8">
-      <div className="space-y-5 max-w-lg">
-        <h5 className="text-gray-300 text-sm">Hi I am</h5>
-        <h2 className="text-5xl font-bold
-        bg-gradient-to-r from-[#f77c0a] via-[#eb4949] to-[#f97316] transparent bg-clip-text text-transparent">Gaurav Kumar</h2>
-        <h1 className="text-4xl font-bold">
-          <span className="text-orange-500 ">Web </span> Developer | Tech Enthusiast | UI/UX Designer
-        </h1>
+    <section className="flex flex-col md:flex-row items-center justify-around min-h-screen py-20 gap-12 px-4 relative overflow-hidden">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/50 via-gray-800/50 to-gray-900/50 -z-10"></div>
+      
+      {/* Left Content */}
+      <div className="space-y-4 max-w-2xl animate-fade-in">
+        <div className="space-y-4">
+          <h5 className="text-gray-300 text-lg font-medium tracking-wide animate-slide-up">
+            Hi, I'm
+          </h5>
+          <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-[#f77c0a] via-[#eb4949] to-[#f97316] bg-clip-text text-transparent animate-slide-up animation-delay-200">
+            Gaurav Kumar
+          </h2>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight animate-slide-up animation-delay-400">
+            <span className="text-orange-500">Web Developer</span> | 
+            <span className="text-gray-300"> Tech Enthusiast</span> | 
+            <span className="text-gray-300"> UI/UX Designer</span>
+          </h1>
+          <p className="text-gray-400 text-lg leading-relaxed animate-slide-up animation-delay-600">
+            Passionate about creating beautiful, functional, and user-centric digital experiences. 
+            Transforming ideas into reality through code and creativity.
+          </p>
+        </div>
 
-        <div className="flex gap-8 text-xl mt-10 ">
-          <a className="hover:scale-140 hover:text-orange-500 transition-transform " href="https://github.com/Gauravlodhi530" target="_blank" rel="noopener noreferrer">
+        {/* Social Links */}
+        <div className="flex gap-6 text-2xl animate-slide-up animation-delay-800">
+          <a 
+            className="hover:scale-125 hover:text-orange-500 transition-all duration-300 p-2 rounded-full hover:bg-gray-800/50" 
+            href="https://github.com/Gauravlodhi530" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </a>
-          <a className="hover:scale-140 hover:text-orange-500 transition-transform" href="https://www.linkedin.com/in/gaurav-lodhi9090/" target="_blank" rel="noopener noreferrer">
+          <a 
+            className="hover:scale-125 hover:text-orange-500 transition-all duration-300 p-2 rounded-full hover:bg-gray-800/50" 
+            href="https://www.linkedin.com/in/gaurav-lodhi9090/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin />
           </a>
-          <a className="hover:scale-140 hover:text-orange-500 transition-transform " href="https://discord.com" target="_blank" rel="noopener noreferrer">
+          <a 
+            className="hover:scale-125 hover:text-orange-500 transition-all duration-300 p-2 rounded-full hover:bg-gray-800/50" 
+            href="https://discord.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Discord"
+          >
             <FaDiscord />
-
           </a>
-          <a className="hover:scale-140 hover:text-orange-500 transition-transform" href="https://www.instagram.com/_alone__boy__530/" target="_blank" rel="noopener noreferrer">
+          <a 
+            className="hover:scale-125 hover:text-orange-500 transition-all duration-300 p-2 rounded-full hover:bg-gray-800/50" 
+            href="https://www.instagram.com/_alone__boy__530/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <FaInstagram />
           </a>
         </div>
 
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 animate-slide-up animation-delay-1000">
+          <Link 
+            href="/contact"
+            className="bg-gradient-to-r from-[#db2777] via-[#ef4444] to-[#f97316] font-bold px-8 py-4 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-center"
+          >
+            Hire Me
+          </Link>
 
-        <div className="flex gap-4 mt-4">
-          <button onClick={() => router.push('/contact')} className="bg-gradient-to-r from-[#db2777] via-[#ef4444] to-[#f97316] font-bold px-4 py-2 rounded hover:scale-105 transition-transform">Hire Me</button>
-
-          <a
+          <Link
             href="/Gaurav_Kumar_Resume.pdf"
+            className="flex items-center justify-center gap-3 text-white px-8 py-4 border-2 border-gray-600 rounded-lg hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:border-orange-500"
             download
-            className="flex items-center gap-2 text-white px-4 py-2 border rounded hover:bg-gray-700 transition ml-3 hover:scale-105"
           >
             <FaDownload />
             Download Resume
-          </a>
+          </Link>
         </div>
 
-        <div className="flex gap-6 mt-6 text-sm w-full max-w-100 bg-gray-700/80 p-5">
-          <div><strong className="text-orange-500 text-xl">5+</strong><p>Experiences</p> <hr className="border-gray-400 " /></div>
-          <div><strong className="text-orange-500 text-xl">20+</strong><p>Project done</p> <hr className="border-gray-400" /></div>
-          <div><strong className="text-orange-500 text-xl">80+</strong><p>Happy Clients</p> <hr className="border-gray-400" /></div>
+        {/* Statistics */}
+        <div className="grid grid-cols-3 gap-6 mt-8 animate-slide-up animation-delay-1200">
+          <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300">
+            <strong className="text-orange-500 text-2xl block">5+</strong>
+            <p className="text-gray-400 text-sm">
+            Projects Completed (Web & AI-Based)</p>
+          </div>
+          <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300">
+            <strong className="text-orange-500 text-2xl block">5+</strong>
+            <p className="text-gray-400 text-sm">
+            Hackathons & Internships Participated</p>
+          </div>
+          <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300">
+            <strong className="text-orange-500 text-2xl block">4+</strong>
+            <p className="text-gray-400 text-sm">Tech Events & Hackathons Organized</p>
+          </div>
         </div>
       </div>
 
-      <div className="mt-8
-       md:mt-5">
-        <img src="profile photo.jpg" alt="Profile" className="rounded-full w-86 h-85 object-cover bg-red-600" />
+      {/* Right Content - Profile Image */}
+      <div className="relative animate-fade-in animation-delay-400">
+        <div className="relative">
+          {/* Glow effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+          
+          {/* Profile image */}
+          <img 
+            src="/profile photo.jpg" 
+            alt="Gaurav Kumar - Web Developer" 
+            className="relative rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-4 border-gray-700 hover:border-orange-500 transition-all duration-300 shadow-2xl"
+          />
+          
+          {/* Floating elements */}
+          <div className="absolute -top-4 -right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold animate-bounce">
+            Available
+          </div>
+        </div>
       </div>
-
-
     </section>
-  )
+  );
 }

@@ -1,79 +1,175 @@
 'use client';
 
-import { FaFacebookF, FaTwitter, FaInstagram, FaBehance } from 'react-icons/fa';
-import Link from 'next/link'; // Import Link from next/link
+import { FaGithub, FaLinkedin, FaInstagram, FaDiscord, FaMailBulk, FaPhone, FaMapMarkerAlt, FaTwitter } from 'react-icons/fa';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-6 px-4 text-center">
-      <div className="max-w-5xl mx-auto">
-        <div className="mb-4">
-          <h1 className="text-red-500 text-2xl font-bold mb-2">Gaurav Kumar</h1> {/* Added content to h1 */}
+    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-16 px-4 md:px-8 lg:px-16">
+      <div className="max-w-7xl mx-auto">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          
+          {/* Brand Section */}
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent mb-4">
+                Gaurav Kumar
+              </h3>
+              <p className="text-gray-400 leading-relaxed">
+                Passionate software engineer and UI/UX designer creating innovative digital experiences 
+                that make a difference.
+              </p>
+            </div>
+            
+            {/* Social Links */}
+            <div className="flex space-x-4">
+              <a
+                href="https://github.com/Gauravlodhi530"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                aria-label="Visit my GitHub profile"
+              >
+                <FaGithub className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/gaurav-lodhi9090/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                aria-label="Visit my LinkedIn profile"
+              >
+                <FaLinkedin className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
+              </a>
+              <a
+                href="https://www.instagram.com/_alone__boy__530/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                aria-label="Visit my Instagram profile"
+              >
+                <FaInstagram className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
+              </a>
+            
+              <a
+                href="https://x.com/_Gaurav_Lodhi_"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                aria-label="Join my Discord server"
+              >
+                <FaTwitter className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
+              </a>
+              <a
+                href="https://discord.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                aria-label="Join my Discord server"
+              >
+                <FaDiscord className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
+              </a>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg mb-4">Quick Links</h4>
+            <nav className="space-y-3">
+              <Link href="/" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Home
+              </Link>
+              <Link href="/about" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                About Me
+              </Link>
+              <Link href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Services
+              </Link>
+              <Link href="/portfolio" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Portfolio
+              </Link>
+              <Link href="/contact" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Contact
+              </Link>
+            </nav>
+          </div>
+
+          {/* Services */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg mb-4">Services</h4>
+            <nav className="space-y-3">
+              <a href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Web Development
+              </a>
+              <a href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                UI/UX Design
+              </a>
+              <a href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Mobile Development
+              </a>
+              <a href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                SEO Optimization
+              </a>
+              <a href="/services" className="block text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Digital Marketing
+              </a>
+            </nav>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-lg mb-4">Contact Info</h4>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <FaMailBulk className="text-orange-400" />
+                <a 
+                  href="mailto:Gauravlodhi530@gmail.com" 
+                  className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
+                >
+                  Gauravlodhi530@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaPhone className="text-orange-400" />
+                <a 
+                  href="tel:+916397973513" 
+                  className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
+                >
+                  +91 6397973513
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <FaMapMarkerAlt className="text-orange-400" />
+                <span className="text-gray-400">Remote / Worldwide</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <nav className="flex flex-col sm:flex-row justify-center gap-4 mb-6 text-base">
-          {/* Use Link for internal navigation */}
-          <Link href="/home" className="hover:text-white transition-colors">
-            Home
-          </Link>
-          <Link href="/services" className="hover:text-white transition-colors">
-            Services
-          </Link>
-          <Link href="/about" className="hover:text-white transition-colors">
-            About me
-          </Link>
-          <Link href="/portfolio" className="hover:text-white transition-colors">
-            Portfolio
-          </Link>
-          <Link href="/contact" className="hover:text-white transition-colors">
-            Contact me
-          </Link>
-        </nav>
-        <div className="flex justify-center gap-4 mb-6">
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-            aria-label="Visit my Facebook profile"
-          >
-            <FaFacebookF className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-            aria-label="Visit my Twitter profile"
-          >
-            <FaTwitter className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-            aria-label="Visit my Instagram profile"
-          >
-            <FaInstagram className="w-5 h-5" />
-          </a>
-          <a
-            href="https://www.behance.net"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-white transition-colors"
-            aria-label="Visit my Behance profile"
-          >
-            <FaBehance className="w-5 h-5" />
-          </a>
-        </div>
-        <div className="mb-6 text-sm">
-          <p>📧 Gauravlodhi530@gmail.com</p>
-          <p>📞 +91 6397973513</p>
-        </div>
-        <div className="border-t border-gray-700 pt-4 text-xs">
-          <p>Designed by @Gaurav Kumar | UI/UX Designer &copy; {currentYear}</p> {/* Added currentYear */}
+
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-700/50 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-sm text-gray-400">
+              <p>
+                © {currentYear} Gaurav Kumar. All rights reserved. | 
+                <span className="text-orange-400"> UI/UX Designer & Web Developer</span>
+              </p>
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <a href="/privacy" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Privacy Policy
+              </a>
+              <a href="/terms" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Terms of Service
+              </a>
+              <a href="/sitemap" className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                Sitemap
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
