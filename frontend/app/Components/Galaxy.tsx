@@ -310,7 +310,7 @@ export default function Galaxy({
       renderer.render({ scene: mesh });
     }
     animateId = requestAnimationFrame(update);
-    ctn.appendChild(gl.canvas);
+    ctn.appendChild(gl.canvas as HTMLCanvasElement);
 
     function handleMouseMove(e: MouseEvent) {
       const rect = ctn.getBoundingClientRect();
@@ -336,7 +336,7 @@ export default function Galaxy({
         ctn.removeEventListener("mousemove", handleMouseMove);
         ctn.removeEventListener("mouseleave", handleMouseLeave);
       }
-      ctn.removeChild(gl.canvas);
+      ctn.removeChild(gl.canvas as HTMLCanvasElement);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
   }, [
