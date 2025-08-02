@@ -4,7 +4,7 @@ import Contact from "../models/Contact";
 
 const router = Router();
 
-router.post("/contact", async (req, res) => {
+router.post("/api/contact", async (req, res) => {
   console.log("Incoming POST /api/contact");
   console.log("Request body:", req.body);
 
@@ -33,7 +33,7 @@ router.post("/contact", async (req, res) => {
 });
 
 // GET route to fetch all contacts
-router.get("/contacts", async (req, res) => {
+router.get("/api/contacts", async (req, res) => {
   try {
     const contacts = await Contact.find().sort({ createdAt: -1 });
     res.status(200).json(contacts);
@@ -44,7 +44,7 @@ router.get("/contacts", async (req, res) => {
 });
 
 // DELETE route to delete a contact
-router.delete("/contacts/:id", async (req, res) => {
+router.delete("/api/contacts/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const deletedContact = await Contact.findByIdAndDelete(id);
