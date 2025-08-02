@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 connectDB();
 
 // Routes
-app.use(contactRoutes);
+app.use("/api",contactRoutes);
 
 app.get('/', (req, res) => {
   res.send('Backend is working!');
