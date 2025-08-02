@@ -1,4 +1,5 @@
 import { Router } from "express";
+import mongoose from "mongoose";
 import Contact from "../models/Contact";
 
 const router = Router();
@@ -12,6 +13,12 @@ router.post("/api/contact", async (req, res) => {
 
     if (!name || !email || !phone || !message) {
       return res.status(400).json({ message: "Missing required fields" });
+    }
+
+    // Check if database is connected
+    if (mongoose.connection.readyState !== 1) {
+      console.error("Database not connected");
+      return res.status(500).json({ message: "Database connection error" });
     }
 
     const contact = new Contact({ name, email, phone, message });

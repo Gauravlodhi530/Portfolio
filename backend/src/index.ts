@@ -9,7 +9,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: "http://https://gauravkumarportfolio.vercel.app/:3000", // Frontend URL
+  origin: ["https://gauravkumarportfolio.vercel.app", "http://localhost:3000"],
   credentials: true
 }));
 
