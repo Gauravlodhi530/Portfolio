@@ -1,7 +1,11 @@
 import React from "react";
 import SkillCard from "./SkillCard";
 import { motion } from 'framer-motion';
-import { FiDownload, FiAward, FiUsers, FiCode, FiCoffee } from "react-icons/fi";
+import { FiDownload } from "react-icons/fi";
+import Marquee from "react-fast-marquee";
+
+
+
 
 const skills = [
   { name: "JavaScript", icon: "/javascript .jpg", level: 90 },
@@ -9,6 +13,7 @@ const skills = [
   { name: "Node Js", icon: "/node js.png", level: 80 },
   { name: "TypeScript", icon: "/TypeScript.jpg", level: 75 },
   { name: "Python", icon: "/python.jpg", level: 70 },
+  { name: "MongoDB", icon: "/mongoDB.png", level: 70 },
 ];
 
 const AboutSection: React.FC = () => {
@@ -21,14 +26,14 @@ const AboutSection: React.FC = () => {
             About <span className="text-orange-400">Me</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            Passionate software engineer with expertise in creating intuitive user experiences 
+            Passionate software engineer with expertise in creating intuitive user experiences
             and innovative digital solutions.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Left Content - Image */}
-          <motion.div 
+          <motion.div
             className="relative animate-fade-in animation-delay-200"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -37,7 +42,7 @@ const AboutSection: React.FC = () => {
             <div className="relative">
               {/* Background glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-3xl blur-2xl"></div>
-              
+
               {/* Image */}
               <img
                 src="/about.jpg"
@@ -48,43 +53,43 @@ const AboutSection: React.FC = () => {
           </motion.div>
 
           {/* Right Content - Text */}
-          <motion.div 
+          <motion.div
             className="space-y-6 animate-fade-in animation-delay-400"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             <div>
-  <h3 className="text-2xl font-bold text-white mb-4">
-    Software Engineer & UI/UX Designer
-  </h3>
-  <p className="text-orange-400 text-lg font-medium mb-6">
-    Creating Digital Experiences That Matter
-  </p>
-</div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Software Engineer & UI/UX Designer
+              </h3>
+              <p className="text-orange-400 text-lg font-medium mb-6">
+                Creating Digital Experiences That Matter
+              </p>
+            </div>
 
-<div className="space-y-4 text-gray-300 leading-relaxed">
-  <p>
-    I'm Gaurav Kumar, a passionate software engineer and creative UI/UX designer, dedicated to building 
-    functional and beautiful digital solutions. I specialize in web development, front-end technologies, 
-    and user-centered design with a growing passion for AI integration.
-  </p>
-  <p>
-    Though I’m a fresher academically, I’ve already completed 10+ real-world projects — from e-commerce 
-    websites to AI tools — and organized 4+ impactful tech events and hackathons that brought hundreds 
-    of developers together. I’m also an active contributor to tech communities like Nova Coders.
-  </p>
-  <p>
-    My approach combines clean, scalable code with visually engaging interfaces. I love crafting seamless 
-    user experiences, using tools like React.js, Tailwind CSS, Figma, and Next.js — while also exploring 
-    emerging tools and APIs like Gemini, DeepSeek, and Hugging Face.
-  </p>
-  <p>
-    I'm a self-learner at heart, currently upskilling through Sheriyans Coding School and hands-on 
-    internships. I'm always looking to learn, grow, and solve real-world problems through innovative tech.
-  </p>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
+              <p>
+                I'm Gaurav Kumar, a passionate software engineer and creative UI/UX designer, dedicated to building
+                functional and beautiful digital solutions. I specialize in web development, front-end technologies,
+                and user-centered design with a growing passion for AI integration.
+              </p>
+              <p>
+                Though I’m a fresher academically, I’ve already completed 10+ real-world projects — from e-commerce
+                websites to AI tools — and organized 4+ impactful tech events and hackathons that brought hundreds
+                of developers together. I’m also an active contributor to tech communities like Nova Coders.
+              </p>
+              <p>
+                My approach combines clean, scalable code with visually engaging interfaces. I love crafting seamless
+                user experiences, using tools like React.js, Tailwind CSS, Figma, and Next.js — while also exploring
+                emerging tools and APIs like Gemini, DeepSeek, and Hugging Face.
+              </p>
+              <p>
+                I'm a self-learner at heart, currently upskilling through Sheriyans Coding School and hands-on
+                internships. I'm always looking to learn, grow, and solve real-world problems through innovative tech.
+              </p>
 
-</div>
+            </div>
 
 
             {/* Stats */}
@@ -136,15 +141,17 @@ const AboutSection: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+           <Marquee speed={60} gradient={false} className="gap-[-20px] p-2 ">
             {skills.map((skill, index) => (
-              <SkillCard 
-                key={skill.name} 
-                {...skill} 
+              <SkillCard
                 index={index}
+                key={skill.name}
+                name={skill.name}
+                icon={skill.icon}
+                level={skill.level}
               />
             ))}
-          </div>
+          </Marquee>
         </div>
       </div>
     </section>

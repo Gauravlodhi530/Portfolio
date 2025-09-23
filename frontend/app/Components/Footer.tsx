@@ -5,13 +5,40 @@ import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const socialLinks = [
+  {
+    href: "https://github.com/Gauravlodhi530",
+    icon: <FaGithub />,
+    label: "Visit my GitHub profile",
+  },
+  {
+    href: "https://www.linkedin.com/in/gaurav-lodhi9090/",
+    icon: <FaLinkedin />,
+    label: "Visit my LinkedIn profile",
+  },
+  {
+    href: "https://www.instagram.com/_alone__boy__530/",
+    icon: <FaInstagram />,
+    label: "Visit my Instagram profile",
+  },
+  {
+    href: "https://x.com/_Gaurav_Lodhi_",
+    icon: <FaTwitter />,
+    label: "Visit my Twitter profile",
+  },
+  {
+    href: "https://discord.com",
+    icon: <FaDiscord />,
+    label: "Join my Discord server",
+  },
+];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-16 px-4 md:px-8 lg:px-16">
+    <footer className=" bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-gray-400 py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-          
+
           {/* Brand Section */}
           <div className="space-y-4">
             <div>
@@ -19,59 +46,27 @@ export default function Footer() {
                 Gaurav Kumar
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Passionate software engineer and UI/UX designer creating innovative digital experiences 
+                Passionate software engineer and UI/UX designer creating innovative digital experiences
                 that make a difference.
               </p>
             </div>
-            
+
             {/* Social Links */}
             <div className="flex space-x-4">
-              <a
-                href="https://github.com/Gauravlodhi530"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
-                aria-label="Visit my GitHub profile"
-              >
-                <FaGithub className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/gaurav-lodhi9090/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
-                aria-label="Visit my LinkedIn profile"
-              >
-                <FaLinkedin className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
-              </a>
-              <a
-                href="https://www.instagram.com/_alone__boy__530/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
-                aria-label="Visit my Instagram profile"
-              >
-                <FaInstagram className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
-              </a>
-            
-              <a
-                href="https://x.com/_Gaurav_Lodhi_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
-                aria-label="Join my Discord server"
-              >
-                <FaTwitter className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
-              </a>
-              <a
-                href="https://discord.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
-                aria-label="Join my Discord server"
-              >
-                <FaDiscord className="text-gray-400 hover:text-orange-400 transition-colors duration-300" />
-              </a>
+              {socialLinks.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.href}
+                  target="_blank" // open in new tab
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-800/50 rounded-lg border border-gray-700/50 hover:border-orange-500/50 hover:bg-orange-500/20 transition-all duration-300"
+                  aria-label={link.label}
+                >
+                  <span className="text-gray-400 hover:text-orange-400 transition-colors duration-300">
+                    {link.icon}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
 
@@ -125,8 +120,8 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <FaMailBulk className="text-orange-400" />
-                <a 
-                  href="mailto:Gauravlodhi530@gmail.com" 
+                <a
+                  href="mailto:Gauravlodhi530@gmail.com"
                   className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
                 >
                   Gauravlodhi530@gmail.com
@@ -134,8 +129,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhone className="text-orange-400" />
-                <a 
-                  href="tel:+916397973513" 
+                <a
+                  href="tel:+916397973513"
                   className="text-gray-400 hover:text-orange-400 transition-colors duration-300"
                 >
                   +91 6397973513
@@ -154,7 +149,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-gray-400">
               <p>
-                © {currentYear} Gaurav Kumar. All rights reserved. | 
+                © {currentYear} Gaurav Kumar. All rights reserved. |
                 <span className="text-orange-400"> UI/UX Designer & Web Developer</span>
               </p>
             </div>

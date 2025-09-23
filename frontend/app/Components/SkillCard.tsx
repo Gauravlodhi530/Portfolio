@@ -15,7 +15,7 @@ const SkillCard: React.FC<SkillProps> = ({ name, icon, level, index }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.1 }}
       whileHover={{ y: -10, scale: 1.05 }}
-      className="group relative bg-gradient-to-br from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20"
+      className="group relative bg-gradient-to-br from-gray-800/50 to-gray-700/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 hover:shadow-2xl w-50 hover:shadow-orange-500/20 mx-2"
     >
       {/* Icon */}
       <div className="text-center mb-4">
@@ -35,8 +35,8 @@ const SkillCard: React.FC<SkillProps> = ({ name, icon, level, index }) => {
 
 
 
-      {/* Hover Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      {/* Hover Effect Overlay
+      <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div> */}
     </motion.div>
   );
 };

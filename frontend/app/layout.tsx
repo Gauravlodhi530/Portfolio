@@ -14,6 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="relative bg-gradient-to-bl from-gray-900 to-gray-800 text-white overflow-x-hidden">
+
         <Navbar />
         <main>{children}</main>
         <FooterControl />
