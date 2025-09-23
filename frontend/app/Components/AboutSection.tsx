@@ -91,31 +91,6 @@ const AboutSection: React.FC = () => {
 
             </div>
 
-
-            {/* Stats */}
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6">
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                <FiCode className="text-orange-400 text-2xl mx-auto mb-2" />
-                <div className="text-white font-bold text-xl">50+</div>
-                <div className="text-gray-400 text-sm">Projects</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                <FiUsers className="text-orange-400 text-2xl mx-auto mb-2" />
-                <div className="text-white font-bold text-xl">30+</div>
-                <div className="text-gray-400 text-sm">Clients</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                <FiAward className="text-orange-400 text-2xl mx-auto mb-2" />
-                <div className="text-white font-bold text-xl">5+</div>
-                <div className="text-gray-400 text-sm">Years</div>
-              </div>
-              <div className="text-center p-4 bg-gray-800/50 rounded-lg border border-gray-700/50">
-                <FiCoffee className="text-orange-400 text-2xl mx-auto mb-2" />
-                <div className="text-white font-bold text-xl">∞</div>
-                <div className="text-gray-400 text-sm">Coffee</div>
-              </div>
-            </div> */}
-
             {/* CTA Button */}
             <div className="pt-6">
               <a
