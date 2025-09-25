@@ -4,7 +4,7 @@ import Navbar from '@/app/Components/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
 import FooterControl from '@/app/Components/FooterControl';
-import SplashCursor from '@/components/SplashCursor';
+import ClientSplashCursor from '@/components/ClientSplashCursor';
 
 export const metadata: Metadata = {
   title: 'Portfolio | Gaurav Kumar',
@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="relative bg-gradient-to-bl from-gray-900 to-gray-800 text-white overflow-x-hidden">
- <SplashCursor />
+ <ClientSplashCursor />
         <Navbar />
         <main>{children}</main>
         <FooterControl />

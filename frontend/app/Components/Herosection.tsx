@@ -1,7 +1,8 @@
-'use client'
+"use client"
 import { FaInstagram, FaGithub, FaLinkedin, FaDiscord, FaDownload } from "react-icons/fa";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image'
 import RotatingText from "@/components/RotatingText";
 
 export default function HeroSection() {
@@ -134,9 +135,12 @@ I am a <RotatingText
           <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-full blur-2xl opacity-20 animate-pulse"></div>
 
           {/* Profile image */}
-          <img
-            src="/profile photo.jpg"
+          <Image
+            src="/profile_photo.jpg"
             alt="Gaurav Kumar - Web Developer"
+            width={384}
+            height={384}
+            priority
             className="relative rounded-full w-80 h-80 md:w-96 md:h-96 object-cover border-4 border-gray-700 hover:border-orange-500 transition-all duration-300 shadow-2xl"
           />
 
