@@ -52,7 +52,7 @@ export default function AdminPage() {
 const fetchData = async () => {
     setLoading(true);
   try {
-    const res = await axios.get("/api/contacts"); 
+    const res = await axios.get("https://portfolio-backend-b622.onrender.com/api/contacts");
     if (res.data) {
         setData(res.data);
         setFilteredData(res.data);
@@ -69,7 +69,7 @@ const fetchData = async () => {
     if (!confirm('Are you sure you want to delete this contact?')) return;
     
     try {
-      await axios.delete(`/api/contacts/${id}`);
+      await axios.delete(`https://portfolio-backend-b622.onrender.com/api/contacts/${id}`);
       setData(data.filter(contact => contact._id !== id));
       setFilteredData(filteredData.filter(contact => contact._id !== id));
       setNotification({ type: 'success', message: 'Contact deleted successfully!' });
@@ -182,7 +182,7 @@ const fetchData = async () => {
     <div className="min-h-screen mt-20">
       {/* Notification */}
       {notification && (
-        <div className={`fixed top-4 right-4 z-50 p-4 rounded-xl shadow-lg transition-all duration-300 ${
+        <div className={`fixed top-15 right-4 z-50 p-4 rounded-xl shadow-lg transition-all duration-300 ${
           notification.type === 'success' 
             ? 'bg-emerald-500/20 border border-emerald-500/50 text-emerald-400' 
             : 'bg-red-500/20 border border-red-500/50 text-red-400'

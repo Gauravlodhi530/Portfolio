@@ -120,7 +120,7 @@ html {
 /* Custom selection */
 ::selection {
   /* background: #f97316; */
-  color: white;
+  color: rgb(255, 0, 0);
 }
 
 /* Custom button hover effects */

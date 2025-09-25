@@ -27,7 +27,7 @@ const ContactForm: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
-      const response = await axios.post("https://portfoliobackend-livid.vercel.app/api/contact", data);
+      const response = await axios.post("https://portfolio-backend-b622.onrender.com/api/contact", data);
 
       if (response.status === 200) {
         setSubmitStatus('success');
