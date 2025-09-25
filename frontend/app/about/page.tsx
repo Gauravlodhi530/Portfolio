@@ -85,7 +85,7 @@ export default function About() {
   return (
     <section className="m-20 ">
       <div className=" ">
-        <h2 className="text-4xl font-bold  mb-6">About me </h2>
+        {/* <h2 className="text-4xl font-bold  mb-6">About me </h2> */}
 
         <div>
 
@@ -105,8 +105,8 @@ export default function About() {
           </ScrollVelocity> */}
 
           <AboutSection />
-          <h1 className="text-4xl font-bold mb-6 text-center m-4">My Work</h1>
-          <HoverExpand_001 images={images} className="p-10 " />;
+          {/* <h1 className="text-4xl font-bold mb-6 text-center m-4">My Work</h1>
+          <HoverExpand_001 images={images} className="p-10 " />; */}
         </div>
       </div>
     </section >
